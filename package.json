@@ -1,0 +1,45 @@
+{
+  "name": "server",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "tinenemi <tinenmi@gmail.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/server.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "start-watch": "nodemon compiled.js",
+    "start": "npm run build && babel-node build/server.js --presets=@babel/preset-env,@babel/preset-flow",
+    "start-dev": "nodemon lib/server.js --exec babel-node --presets=@babel/preset-env,@babel/preset-flow",
+    "build": "babel lib/server.js --out-file build/server.js --presets=@babel/preset-env,@babel/preset-flow",
+    "lint": "eslint lib",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "@babel/node": "^7.2.2",
+    "babel-loader": "^8.0.4",
+    "babel-polyfill": "^6.26.0",
+    "client": "^0.0.0",
+    "fastify": "^1.13.3",
+    "fastify-auto-push": "^0.4.0",
+    "fastify-webpack-dev-middleware": "^0.1.1",
+    "fastify-webpack-hmr": "^0.4.0",
+    "webpack": "^4.28.3",
+    "webpack-hot-middleware": "^2.24.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-flow": "^7.0.0",
+    "eslint": "^5.11.1",
+    "eslint-config-google": "^0.11.0",
+    "nodemon": "^1.18.9"
+  }
+}
